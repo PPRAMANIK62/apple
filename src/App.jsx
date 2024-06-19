@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import * as Sentry from "@sentry/react";
+import React from "react";
 import Hero from "./components/Hero";
 import Highlights from "./components/Highlights";
+import Model from "./components/Model";
 import Navbar from "./components/Navbar";
-import Model from "./components/Model"
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <main className=" bg-black">
       <Navbar />
@@ -17,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default Sentry.withProfiler(App);
